@@ -10,12 +10,12 @@ plugins {
 
 android {
     namespace 'com.ruizdev.pokeapptest'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.ruizdev.pokeapptest"
         minSdk 23
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -34,6 +34,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    viewBinding {
+        enabled = true
     }
 }
 
@@ -109,5 +112,8 @@ dependencies {
 
     // Circular Image
     implementation 'com.mikhaellopez:circularimageview:4.3.1'
+
+    // Smart Color Picker
+    implementation 'com.github.novatien:SmartColorPicker:1.0.2'
 
 }

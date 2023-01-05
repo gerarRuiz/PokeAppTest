@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">PokeAppTest</string>
+    <string name="avatar">Avatar</string>
+    <string name="pokedex">Pokedex</string>
+    <string name="ubicacion">Ubicación</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="content_description_avatar">Avatar</string>
+    <string name="url_imagen">Url de la imagen</string>
+    <string name="ingrese_frase">Ingrese una frase</string>
+    <string name="seleccionar_background_color">Seleccionar background color</string>
+    <string name="seleccionar_text_color">Seleccionar text color</string>
+
+    <string name="pokemon_number">#%s</string>
+    <string name="pokemon_peso_kg">%1$.2f KG</string>
+    <string name="pokemon_peso">Peso</string>
+    <string name="pokemon_altura">Altura</string>
+    <string name="pokemon_altura_m">%1$.2f M</string>
+    <string name="location_updated">Ubicación actualizada</string>
+    <string name="no_info">No hay información</string>
+    <string name="no_info_solicitada">No se encontro la información solicitdada</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="error">Error</string>
+    <string name="title_historial">Historial</string>
+
+    <string name="tv_info_latitud">Latitud:\n%1$.4f</string>
+    <string name="tv_info_longitud">Longitud:\n%1$.4f</string>
+
+    <string name="text_error_consultar_datos">Error al consultar datos</string>
+
 </resources>

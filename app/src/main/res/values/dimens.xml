@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="common_margin">16dp</dimen>
+    <dimen name="title_size">35sp</dimen>
+    <dimen name="image_view_avatar_size">100dp</dimen>
+    <dimen name="tv_initials_size">22sp</dimen>
+    <dimen name="view_color_size">50dp</dimen>
+    <dimen name="corners_size">10dp</dimen>
+    <dimen name="elevation_card">10dp</dimen>
+    <dimen name="stroke_width">2dp</dimen>
+    <dimen name="min_margin">4dp</dimen>
+    <dimen name="details_tv_size">20sp</dimen>
+    <dimen name="tv_subtitle_details_size">16sp</dimen>
+    <dimen name="medium_margin">8dp</dimen>
+    <dimen name="corner_radius_pokemon_type">20dp</dimen>
+    <dimen name="btn_back_size">40dp</dimen>
+</resources>

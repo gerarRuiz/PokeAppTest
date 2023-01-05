@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".presentation.fragments.pokedex.PokedexFragment">
+
+    <TextView
+        android:id="@+id/tv_title_pokedex"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/pokedex"
+        android:layout_marginTop="@dimen/common_margin"
+        android:layout_marginHorizontal="@dimen/common_margin"
+        android:textAlignment="center"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/title_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_pokedex"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_pokedex"
+        tools:listitem="@layout/item_pokemon"
+        tools:itemCount="10"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

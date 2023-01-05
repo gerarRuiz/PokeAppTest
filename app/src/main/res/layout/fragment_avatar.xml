@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".presentation.fragments.avatar.AvatarFragment">
+
+    <TextView
+        android:id="@+id/tv_title_avatar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/avatar"
+        android:layout_marginTop="@dimen/common_margin"
+        android:layout_marginHorizontal="@dimen/common_margin"
+        android:textAlignment="center"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/title_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_view_avatar"
+        android:layout_width="@dimen/image_view_avatar_size"
+        android:layout_height="@dimen/image_view_avatar_size"
+        android:layout_marginTop="@dimen/common_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_avatar"
+        android:background="@drawable/circle"
+        android:contentDescription="@string/content_description_avatar"/>
+
+    <TextView
+        android:id="@+id/tv_initials"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/app_name"
+        android:textColor="@color/black"
+        android:textSize="@dimen/tv_initials_size"
+        app:layout_constraintEnd_toEndOf="@id/image_view_avatar"
+        app:layout_constraintStart_toStartOf="@id/image_view_avatar"
+        app:layout_constraintTop_toTopOf="@id/image_view_avatar"
+        app:layout_constraintBottom_toBottomOf="@id/image_view_avatar"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_url"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/url_imagen"
+        app:endIconMode="clear_text"
+        android:layout_marginTop="@dimen/common_margin"
+        android:layout_marginHorizontal="@dimen/common_margin"
+        android:padding="@dimen/medium_margin"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxBackgroundColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_view_avatar">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textUri"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_frase"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/ingrese_frase"
+        app:endIconMode="clear_text"
+        android:layout_marginTop="@dimen/common_margin"
+        android:padding="@dimen/medium_margin"
+        app:boxBackgroundColor="@color/white"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:layout_constraintStart_toStartOf="@id/til_url"
+        app:layout_constraintEnd_toEndOf="@id/til_url"
+        app:layout_constraintTop_toBottomOf="@id/til_url">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_frase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_background_color"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_margin"
+        android:layout_marginEnd="@dimen/common_margin"
+        android:text="@string/seleccionar_background_color"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toStartOf="@+id/view_background_color"
+        app:layout_constraintStart_toStartOf="@+id/til_frase"
+        app:layout_constraintTop_toBottomOf="@+id/til_frase" />
+
+    <View
+        android:id="@+id/view_background_color"
+        android:layout_width="@dimen/view_color_size"
+        android:layout_height="@dimen/view_color_size"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_background_color"
+        app:layout_constraintEnd_toEndOf="@+id/til_frase"
+        app:layout_constraintTop_toTopOf="@+id/btn_background_color" />
+
+    <Button
+        android:id="@+id/btn_text_color"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_margin"
+        android:layout_marginEnd="@dimen/common_margin"
+        android:text="@string/seleccionar_text_color"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toStartOf="@+id/view_text_color"
+        app:layout_constraintStart_toStartOf="@+id/btn_background_color"
+        app:layout_constraintTop_toBottomOf="@+id/btn_background_color" />
+
+    <View
+        android:id="@+id/view_text_color"
+        android:layout_width="@dimen/view_color_size"
+        android:layout_height="@dimen/view_color_size"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_text_color"
+        app:layout_constraintEnd_toEndOf="@+id/til_frase"
+        app:layout_constraintTop_toTopOf="@+id/btn_text_color" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

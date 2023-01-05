@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.ruizdev.pokeapptest.presentation.fragments.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_pokedexFragment2"
+            app:destination="@id/pokedexFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/pokedexFragment2"
+        android:name="com.ruizdev.pokeapptest.presentation.fragments.pokedex.PokedexFragment"
+        android:label="fragment_pokedex"
+        tools:layout="@layout/fragment_pokedex" >
+        <action
+            android:id="@+id/action_pokedexFragment2_to_imageFragment"
+            app:destination="@id/imageFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_pokedexFragment2_to_detailsFragment"
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_pokedexFragment2_to_locationHistoryFragment"
+            app:destination="@id/locationHistoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/avatarFragment"
+        android:name="com.ruizdev.pokeapptest.presentation.fragments.avatar.AvatarFragment"
+        android:label="AvatarFragment"
+        tools:layout="@layout/fragment_avatar"/>
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="com.ruizdev.pokeapptest.presentation.fragments.image.ImageFragment"
+        android:label="fragment_image"
+        tools:layout="@layout/fragment_image" >
+        <argument
+            android:name="idPokemon"
+            app:argType="integer"
+            android:defaultValue="1" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.ruizdev.pokeapptest.presentation.fragments.details.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="pokemonId"
+            app:argType="integer"
+            android:defaultValue="1" />
+        <argument
+            android:name="isFavorite"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/locationHistoryFragment"
+        android:name="com.ruizdev.pokeapptest.presentation.fragments.location.LocationHistoryFragment"
+        android:label="LocationHistoryFragment"
+        tools:layout="@layout/fragment_location_history">
+        <action
+            android:id="@+id/action_locationHistoryFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.ruizdev.pokeapptest.presentation.fragments.maps.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" >
+        <argument
+            android:name="latitude"
+            app:argType="string"
+            android:defaultValue='"0.0"' />
+        <argument
+            android:name="longitude"
+            app:argType="string"
+            android:defaultValue='"0.0"' />
+    </fragment>
+</navigation>

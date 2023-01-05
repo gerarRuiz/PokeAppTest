@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".presentation.fragments.details.DetailsFragment">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tv_pokemon_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/common_margin"
+        android:layout_marginTop="@dimen/common_margin"
+        tools:text="Bulbasur"
+        android:textSize="@dimen/title_size"
+        android:textColor="@color/gray"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_view_pokemon_types"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_margin"
+        android:orientation="horizontal"
+        tools:listitem="@layout/item_type"
+        tools:itemCount="5"
+        tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="@+id/tv_pokemon_name"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_pokemon_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pokemon_name" />
+
+    <TextView
+        android:id="@+id/tv_info_weight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="90.5 KG"
+        android:textAlignment="center"
+        android:textSize="@dimen/details_tv_size"
+        android:textColor="@color/gray"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/common_margin"
+        app:layout_constraintStart_toStartOf="@id/recycle_view_pokemon_types"
+        app:layout_constraintEnd_toEndOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/recycle_view_pokemon_types" />
+
+    <TextView
+        android:id="@+id/tv_value_weigth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pokemon_peso"
+        android:textColor="@color/gray"
+        android:textStyle="italic"
+        android:textSize="@dimen/tv_subtitle_details_size"
+        android:layout_marginTop="@dimen/medium_margin"
+        app:layout_constraintEnd_toEndOf="@+id/tv_info_weight"
+        app:layout_constraintStart_toStartOf="@+id/tv_info_weight"
+        app:layout_constraintTop_toBottomOf="@+id/tv_info_weight" />
+
+    <TextView
+        android:id="@+id/tv_info_height"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="1.7 M"
+        android:textAlignment="center"
+        android:textSize="@dimen/details_tv_size"
+        android:textColor="@color/gray"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_info_weight" />
+
+    <TextView
+        android:id="@+id/tv_value_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pokemon_altura"
+        android:textColor="@color/gray"
+        android:textStyle="italic"
+        android:textSize="@dimen/tv_subtitle_details_size"
+        android:layout_marginTop="@dimen/medium_margin"
+        app:layout_constraintEnd_toEndOf="@+id/tv_info_height"
+        app:layout_constraintStart_toStartOf="@+id/tv_info_height"
+        app:layout_constraintTop_toBottomOf="@+id/tv_info_height" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_begin="205dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="@dimen/btn_back_size"
+        android:layout_height="@dimen/btn_back_size"
+        android:layout_marginStart="@dimen/common_margin"
+        android:layout_marginTop="@dimen/common_margin"
+        android:src="@drawable/ic_back"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_view_favorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_margin"
+        android:layout_marginEnd="@dimen/common_margin"
+        android:src="@drawable/ic_no_favorite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
