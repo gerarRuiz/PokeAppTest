@@ -1,4 +1,4 @@
-package com.ruiz.emovie.presentation.fragments.location
+package com.ruizdev.pokeapptest.presentation.fragments.location
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

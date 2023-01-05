@@ -27,8 +27,8 @@
         <action
             android:id="@+id/action_pokedexFragment2_to_detailsFragment"
             app:destination="@id/detailsFragment"
-            app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right" />
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
         <action
             android:id="@+id/action_pokedexFragment2_to_locationHistoryFragment"
             app:destination="@id/locationHistoryFragment" />

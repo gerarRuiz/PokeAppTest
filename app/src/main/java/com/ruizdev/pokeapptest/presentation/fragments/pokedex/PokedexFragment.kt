@@ -1,10 +1,14 @@
 package com.ruizdev.pokeapptest.presentation.fragments.pokedex
 
+import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.ruizdev.pokeapptest.R
 import com.ruizdev.pokeapptest.databinding.FragmentPokedexBinding
+import com.ruizdev.pokeapptest.presentation.adapters.LoaderAdapter
 import com.ruizdev.pokeapptest.presentation.adapters.PokemonAdapter
 import com.ruizdev.pokeapptest.presentation.common.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -85,7 +89,12 @@ class PokedexFragment : BaseFragment<FragmentPokedexBinding>(FragmentPokedexBind
 
                 }
             )
-            adapter = mAdapter
+            adapter = mAdapter.withLoadStateHeaderAndFooter(
+                footer = LoaderAdapter(),
+                header = LoaderAdapter()
+            )
+
+            handlePokedexResult()
         }
     }
 
@@ -96,5 +105,53 @@ class PokedexFragment : BaseFragment<FragmentPokedexBinding>(FragmentPokedexBind
             }
         }
     }
+
+    private fun handlePokedexResult() {
+
+        lifecycleScope.launch {
+
+            mAdapter.loadStateFlow.collectLatest { state ->
+
+                val error = when {
+                    state.refresh is LoadState.Error -> state.refresh as LoadState.Error
+                    state.prepend is LoadState.Error -> state.prepend as LoadState.Error
+                    state.append is LoadState.Error -> state.append as LoadState.Error
+                    else -> null
+                }
+
+                when {
+
+                    state.refresh is LoadState.Loading -> {
+                        binding.shimmerLayout.root.visibility = View.VISIBLE
+                        binding.noDataLayout.root.visibility = View.GONE
+                    }
+
+                    error != null -> {
+                        binding.shimmerLayout.root.visibility = View.GONE
+                        binding.noDataLayout.root.visibility = View.VISIBLE
+                        binding.noDataLayout.tvNoData.text =
+                            error.error.localizedMessage
+
+                    }
+
+                    mAdapter.itemCount < 1 -> {
+                        binding.shimmerLayout.root.visibility = View.GONE
+                        binding.noDataLayout.root.visibility = View.VISIBLE
+                        binding.noDataLayout.tvNoData.text = getString(R.string.no_info)
+                    }
+
+                    else -> {
+                        binding.recyclerViewPokedex.visibility = View.VISIBLE
+                        binding.noDataLayout.root.visibility = View.GONE
+                        binding.shimmerLayout.root.visibility = View.GONE
+                    }
+
+                }
+
+            }
+
+        }
+    }
+
 
 }

@@ -10,7 +10,6 @@ import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.ruiz.emovie.presentation.fragments.location.LocationHistoryViewModel
 import com.ruizdev.pokeapptest.R
 import com.ruizdev.pokeapptest.databinding.FragmentLocationHistoryBinding
 import com.ruizdev.pokeapptest.domain.model.LocationEvent
