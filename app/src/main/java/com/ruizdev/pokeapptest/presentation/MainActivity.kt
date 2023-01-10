@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
     private var isCoarseLocationPermissionGranted = false
     private var isFineLocationPermissionGranted = false
     private var isNotificationPermissionGranted = false
+    private var isBackgroundPermissionGranted = false
 
     private val permission =
         registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {
@@ -59,6 +60,10 @@ class MainActivity : AppCompatActivity() {
 
                 it[Manifest.permission.POST_NOTIFICATIONS] == true -> {
                     isNotificationPermissionGranted = true
+                }
+
+                it[Manifest.permission.ACCESS_BACKGROUND_LOCATION] == true -> {
+                    isBackgroundPermissionGranted = true
                 }
 
             }
@@ -158,6 +163,12 @@ class MainActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
             if (!isNotificationPermissionGranted){
                 permissionRequest.add(Manifest.permission.POST_NOTIFICATIONS)
+            }
+        }
+
+        if (!isBackgroundPermissionGranted){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                permissionRequest.add(Manifest.permission.ACCESS_BACKGROUND_LOCATION)
             }
         }
 
